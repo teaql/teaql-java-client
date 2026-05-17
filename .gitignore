@@ -1,0 +1,16 @@
+# Maven
+target/
+
+# Signing key — never commit
+signing-key.asc
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+
+# macOS
+.DS_Store
