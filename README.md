@@ -14,7 +14,7 @@ import java.util.Map;
 public class Example {
     public static void main(String[] args) {
         var client = TeaQLClient.builder()
-            .endpoint("https://us-east.api.teaql.io")
+            .endpoint("https://api.teaql.io/latest/")
             .licenseFile(Path.of("/path/to/license"))
             .timeout(Duration.ofSeconds(30))
             .build();
@@ -37,6 +37,21 @@ public class Example {
         boolean ok = client.ping();
     }
 }
+```
+
+### License configuration
+
+Three ways to provide a license key:
+
+```java
+// 1. Explicit file path
+.licenseFile(Path.of("/path/to/license"))
+
+// 2. Default location (TEAQL_LICENSE env var, then ~/.teaql/license)
+.licenseFile()
+
+// 3. Raw string (for environments without a file)
+.licenseKey("your-license-key-here")
 ```
 
 ## Maven
